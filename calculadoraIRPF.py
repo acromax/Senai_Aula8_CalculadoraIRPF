@@ -12,7 +12,6 @@ num2 = float(input('Informe o segundo número: '))
 def calcSomar (num1, num2):
     return num1 + num2 # fórmula de soma
 
-
 #Teste
-totalSoma = somar(num1, num2)
+totalSoma = calcSomar(num1, num2)
 print(f'O valor total da soma é de: {totalSoma}')

@@ -13,17 +13,13 @@ layout = [
 
 janela = psg.Window('Calculadora', layout)
 
-
 while True:
-    evento, valores = janela.read()
-    if evento == psg.WIN_CLOSED:
+    event, values = window.read()
+    if event in (psg.WIN_CLOSED, 'Sair'):
         break
-    elif evento == 'limpar':
-        janela['valores'].update('')
-        janela['resultado'].update('')
-        janela['valores'].set_focus()
-    else:
-        valores = int(valores['valores'])
-        janela['resultado'].update(funcoesConversorTemperatura.celsius_para_fahrenheit(valores))
-
-janela.close()
+    elif evento == 'Calcular Soma':
+        num1 = float(values['num1'])
+        num2 = float(values['num2'])
+        totalSoma = calcSomar(num1, num2)
+    window['calcular'].update(f'A soma de {num1} e {num2} é: {totalSoma}')
+window.close()
